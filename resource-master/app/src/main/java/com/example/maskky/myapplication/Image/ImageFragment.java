@@ -51,6 +51,9 @@ public class ImageFragment extends Fragment {
         });
     }
 
+    /******************
+     *  handing image *
+     ******************/
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -61,8 +64,11 @@ public class ImageFragment extends Fragment {
             case SELECTED_PIC:
                 if (resultCode == RESULT_OK) {
                     Uri uri = data.getData();
+
+                    //save image in list
                     String[] projection = {MediaStore.Images.Media.DATA};
 
+                    //query form sqlLiteDB
                     Cursor cursor = getActivity().getContentResolver().query(uri, projection, null, null, null);
                     cursor.moveToFirst();
 
@@ -70,6 +76,7 @@ public class ImageFragment extends Fragment {
                     String filepath = cursor.getString(columnIndex);
                     cursor.close();
 
+                    //show image
                     //Check image exists
                     File imgFile = new  File(filepath);
                     if(imgFile.exists()){

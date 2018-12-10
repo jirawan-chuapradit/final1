@@ -27,6 +27,10 @@ public class MenuFragment extends Fragment {
         Button buttonImage = getView().findViewById(R.id.btn_image);
         Button buttonBundle = getView().findViewById(R.id.btn_bundle);
         Button buttonFile = getView().findViewById(R.id.btn_file);
+
+            /*********************************
+             *     select image form device  *
+             *********************************/
         buttonImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

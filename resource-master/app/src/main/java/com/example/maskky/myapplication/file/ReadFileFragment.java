@@ -36,9 +36,7 @@ public class ReadFileFragment extends Fragment {
     }
 
     private String readFromFile(Context context) {
-
         String ret = "";
-
         try {
             InputStream inputStream = context.openFileInput("config.txt");
 
